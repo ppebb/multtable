@@ -39,7 +39,7 @@ int main() {
     }
 
     putchar('\n');
-    
+
 
     int max = rows * columns;
     int digitsPerNumber = digitCount(max);
@@ -87,10 +87,11 @@ int main() {
         }
         putchar('\n');
     }
-    
+
+    free(buffer);
+
     getchar();
     getchar();
 
-    free(buffer);
     return 0;
 }
