@@ -1,0 +1,17 @@
+print("%5s".format("|"))
+for (i <- 1 to 22) print("%5d".format(i))
+println()
+println("-----" * 23)
+ 
+for (i <- 1 to 22) {
+  print("%4d|".format(i))
+ 
+  for (j <- 1 to 22) {
+    if (i <= j)
+      print("%5d".format(i * j))
+    else
+      print("%5s".format(""))
+  }
+ 
+  println("")
+}
