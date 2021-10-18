@@ -9,7 +9,7 @@ Filling out the entirity of the [Wikipedia List of Programming Languages](https:
 
 # Currently completed languages
  * C#
-   * Console App
+   * Console App (.NET 5.0, .NET Standard 2.0, .NET Framework 4.5, & .NET Framework 4.0)
  * JS
    * JS + HTML Webpage
 
