@@ -14,8 +14,7 @@ Filling out the entirity of the [Wikipedia List of Programming Languages](https:
    * JS + HTML Webpage
 
 # Contributing
-PRs should include the steps to build and run your code and a screenshot of the
-output.
+PRs should include the steps to build and run your code and a screenshot of the output. Folder naming scheme should be `root/language/application`, so if your pr is a Rust console application then it would be `root/rust/console`.
 
 Your code should take input from the user to determine the number of rows and
 columns and then output as:
@@ -47,3 +46,4 @@ Input the number of rows: 22
  21 |  21  42  63  84 105 126 147 168 189 210 231 252 273 294 315 336 357 378 399 420 441 462
  22 |  22  44  66  88 110 132 154 176 198 220 242 264 286 308 330 352 374 396 418 440 462 484
  ```
+ NOTE: It should not only output 22 rows/columns each time, it should actually respond to user input.
