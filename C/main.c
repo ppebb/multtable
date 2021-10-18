@@ -87,6 +87,9 @@ int main() {
         }
         putchar('\n');
     }
+    
+    getchar();
+    getchar();
 
     free(buffer);
     return 0;
