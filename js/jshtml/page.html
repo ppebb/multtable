@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="joke.js"></script>
+	<title>This is a joke. MarauderKnight3</title>
+</head>
+
+<body>
+	<label for="w">Rows wide:</label>
+	<input type="number" min="1" id="w" name="w" onchange="enforceMin()" value=1>
+	<label for="h">Columns high:</label>
+	<input type="number" min="1" id="h" name="h" onchange="enforceMin()" value=1>
+	<button onclick="createTable()">Submit</button>
+	<p id="e"></p>
+	<table id="t">
+	</table>
+</body>
+
+</html>
