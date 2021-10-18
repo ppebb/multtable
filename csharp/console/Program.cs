@@ -1,52 +1,52 @@
 ﻿using System;
 using System.Text;
 
-namespace multtable {
-	class Program {
-		static void Main(string[] args) {
-			Console.Write("Input the number of columns: ");
-			int columns = int.Parse(Console.ReadLine());
+namespace multtable 
+{
+	public static class Program 
+    {
+		public static void Main() {
+			Console.Write("Input the number of columns:");
+            if (!int.TryParse(Console.ReadLine() ?? "5", out int columns))
+                columns = 5;
 
-			Console.Write("Input the number of rows: ");
-			int rows = int.Parse(Console.ReadLine());
+			Console.Write("Input the number of rows:");
+            if (!int.TryParse(Console.ReadLine() ?? "5", out int rows))
+                rows = 5;
 
 			int length = (columns * rows).ToString().Length + 1;
 			StringBuilder sb = new StringBuilder();
 
-			AppendCharRepeatedly(sb, rows.ToString().Length + 1, ' ');
+			sb.Append(' ', rows.ToString().Length + 1);
 			sb.Append(" |");
 
 			for (int i = 0; i < columns; i++) {
-				AppendCharRepeatedly(sb, length - (i + 1).ToString().Length, ' ');
+                sb.Append(' ', length - (i + 1).ToString().Length);
 				sb.Append(i + 1);
 			}
+
 			sb.AppendLine();
 
-			int sbLength = sb.Length;
-
-			AppendCharRepeatedly(sb, sb.Length, '-');
+            sb.Append('-', sb.Length);
 			sb.AppendLine();
 
 			for (int i = 0; i < rows; i++) {
-				AppendCharRepeatedly(sb, rows.ToString().Length + 1 - (i + 1).ToString().Length, ' ');
+                sb.Append(' ', rows.ToString().Length + 1 - (i + 1).ToString().Length);
 				sb.Append(i + 1);
 				sb.Append(" |");
 
 				for (int j = 0; j < columns; j++) {
-					int currentNumber = ((i + 1) * (j + 1));
-					AppendCharRepeatedly(sb, length - currentNumber.ToString().Length, ' ');
+					int currentNumber = (i + 1) * (j + 1);
+
+                    sb.Append(' ', length - currentNumber.ToString().Length);
 					sb.Append(currentNumber);
 				}
+
 				if (i + 1 != rows)
 					sb.AppendLine();
 			}
 
 			Console.WriteLine(sb.ToString());
 		}
-
-		static void AppendCharRepeatedly(StringBuilder sb, int limiter, char c) {
-			for (int i = 0; i < limiter; i++)
-				sb.Append(c);
-		}
-	}
+    }
 }
