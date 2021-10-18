@@ -17,7 +17,7 @@ Filling out the entirity of the [Wikipedia List of Programming Languages](https:
 PRs should include the steps to build and run your code and a screenshot of the
 output.
 
-Your code should take input from the user to determine the numebr of rows and
+Your code should take input from the user to determine the number of rows and
 colums and then output as:
 ```Input the number of col
 Input the number of columns: 22
