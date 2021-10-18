@@ -4,7 +4,7 @@
 .equ STDOUT, 1     @ Linux output console
 .equ EXIT,   1     @ Linux syscall
 .equ WRITE,  4     @ Linux syscall
-.equ MAXI,   12
+.equ MAXI,   22
 
 .data
 sMessValeur:       .fill 11, 1, ' '            @ size => 11
