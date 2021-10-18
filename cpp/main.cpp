@@ -1,78 +1,127 @@
 #include <iostream>
+#include <ctime>
 #include <iomanip>
-#include <cmath> // for log10()
-#include <algorithm> // for max()
- 
-size_t table_column_width(const int min, const int max)
-{
-    unsigned int abs_max = std::max(max*max, min*min);
- 
-    // abs_max is the largest absolute value we might see.
-    // If we take the log10 and add one, we get the string width
-    // of the largest possible absolute value.
-    // Add one more for a little whitespace guarantee.
-    size_t colwidth = 2 + std::log10(abs_max);
- 
-    // If only one of them is less than 0, then some will
-    // be negative. If some values may be negative, then we need to add some space
-    // for a sign indicator (-)
-    if (min < 0 && max > 0)
-	++colwidth;
-    return colwidth;
-}
- 
-struct Writer_
-{
-    decltype(std::setw(1)) fmt_;
-    Writer_(size_t w) : fmt_(std::setw(w)) {}
-    template<class T_> Writer_& operator()(const T_& info) { std::cout << fmt_ << info; return *this; }
-};
- 
-void print_table_header(const int min, const int max)
-{
-    Writer_ write(table_column_width(min, max));
- 
-    // table corner
-    write(" ");
-    for(int col = min; col <= max; ++col)
-        write(col);
- 
-    // End header with a newline and blank line.
+
+const unsigned int ROWS = 10;
+const unsigned int COLUMNS = 10;
+
+void randomValue(unsigned int &, unsigned int &, unsigned int &);
+
+int main() 
+{   
+  unsigned int rValue;
+  unsigned int cValue;
+  unsigned int pValue;
+
+  unsigned int rowError; 
+  unsigned int columnError;
+  unsigned int productError;
+
+  unsigned int userRowGuess;
+  unsigned int userColumnGuess;
+
+  char choice;  
+
+  do 
+  { 
+    randomValue(rValue, cValue, pValue); 
+
+    std::cout << "\033[2J\033[0;0H"; // This code clears the screen 
+    std::cout << std::endl << std::endl;       
+    std::cout << std::setw(35) << "++++++++++++++++++++++++" << std::endl;
+    std::cout << std::setw(35) << "+ Multiplication Table +" << std::endl;
+    std::cout << std::setw(35) << "++++++++++++++++++++++++" << std::endl;
+    std::cout << std::endl << std::endl;   
+
+    while (true)
+    { 
+      rowError = rValue;
+      columnError = cValue;
+      productError = pValue;
+
+      if (productError == rowError * columnError)
+      {
+        productError--;
+      }
+
+      for (unsigned int row = 1; row <= ROWS; row++)
+      {
+        for (unsigned int column = 1; column <= COLUMNS; column++)
+        {
+          if (row == rowError && column == columnError)
+          { 
+            std::cout << "\t" << "" << productError;       
+          }
+          else
+          {
+            std::cout << "\t" <<  row * column;
+          }
+        }
+      std::cout << std::endl;
+      }  
+      break;
+    }
+
+
     std::cout << std::endl << std::endl;
+    std::cout << "\t\t" << "Type in the column number " << std::endl;
+    std::cout << "\t\t" << "of the location of the    " << std::endl;
+    std::cout << "\t\t" << "error & then press        " << std::endl;
+    std::cout << "\t\t" << "[Enter]: ";
+    std::cin >> userColumnGuess;
+    std::cout << std::endl;
+
+    std::cout << "\t\t" << "Type in the row number " << std::endl;
+    std::cout << "\t\t" << "of the location of the    " << std::endl;
+    std::cout << "\t\t" << "error & then press        " << std::endl;
+    std::cout << "\t\t" << "[Enter]: ";
+    std::cin >> userRowGuess;
+    std::cout << std::endl;
+
+    if (userRowGuess != rowError && userColumnGuess != columnError)
+    {
+      std::cout << "\t\t" << "Your answer was incorrect!" << std::endl << std::endl;
+      std::cout << "\t\t" << "Error value '" << productError << "' is located" << std::endl;
+      std::cout << "\t\t" << "on row " << rowError << ", column " << columnError << "." << std::endl;
+    }
+    else
+    {
+      std::cout << "\t\t" << "You are correct! You win!" << std::endl;
+    }
+
+
+    std::cout << std::endl;
+    std::cout << "\t\t" << "Would you like to play again?" << std::endl << std::endl;
+    std::cout << "\t\t" << "Type in 'Y' for yes or 'N'" << std::endl;
+    std::cout << "\t\t" << "for no & then press [Enter]: ";
+    std::cin >> choice;
+
+    while (choice != 'y' && choice != 'Y' && choice != 'n' && choice != 'N')
+    {
+      std::cout << std::endl;
+      std::cout << "\t\t" << "Invalid entry. Only 'Y' or 'N'" << std::endl;
+      std::cout << "\t\t" << "are accepted answers." << std::endl << std::endl;
+      std::cout << "\t\t" << "Would you like to play again?" << std::endl << std::endl;
+      std::cout << "\t\t" << "Type in 'Y' for yes or 'N' for" << std::endl;
+      std::cout << "\t\t" << "no & then press [Enter]: ";
+      std::cin >> choice;
+    }   
+    std::cout << std::endl;
+
+  } while (choice == 'y' || choice == 'Y'); 
+
+  std::cout << "\t\t" << "Press [Enter] to continue....." << std::endl;
+  std::cin.get();
+  std::cin.get();
+
+  return 0;
 }
- 
-void print_table_row(const int num, const int min, const int max)
-{
-    Writer_ write(table_column_width(min, max));
- 
-    // Header column
-    write(num);
- 
-    // Spacing to ensure only the top half is printed
-    for(int multiplicand = min; multiplicand < num; ++multiplicand)
-        write(" ");
- 
-    // Remaining multiplicands for the row.
-    for(int multiplicand = num; multiplicand <= max; ++multiplicand)
-        write(num * multiplicand);
- 
-    // End row with a newline and blank line.
-    std::cout << std::endl << std::endl;
+
+void randomValue(unsigned int &rValue, unsigned int &cValue, unsigned int &pValue)
+{ 
+  srand((unsigned)time(NULL));
+
+  unsigned int r = rValue = (rand() % ROWS) + 1;
+  unsigned int c = cValue = (rand() % COLUMNS) + 1;
+  unsigned int p = pValue = (rand() % (ROWS * COLUMNS)) + 1;
 }
- 
-void print_table(const int min, const int max)
-{
-    // Header row
-    print_table_header(min, max);
- 
-    // Table body
-    for(int row = min; row <= max; ++row)
-        print_table_row(row, min, max);
-}
- 
-int main()
-{
-    print_table(1, 22);
-    return 0;
-}
- 
