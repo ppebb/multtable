@@ -11,7 +11,7 @@ namespace multtable {
 			int rows = int.Parse(Console.ReadLine());
 
 			int length = (columns * rows).ToString().Length + 1;
-			StringBuilder sb = new();
+			StringBuilder sb = new StringBuilder();
 
 			AppendCharRepeatedly(sb, rows.ToString().Length + 1, ' ');
 			sb.Append(" |");
