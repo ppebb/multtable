@@ -1,5 +1,5 @@
 # Multtable
-Multtable is a collection of multiplication tables in various languages.
+Multtable is a collection of multiplication table generators in various languages.
 
 This project was created as a joke based on one of my brother's CS assignments.
 
@@ -9,7 +9,7 @@ Filling out the entirity of the [Wikipedia List of Programming Languages](https:
 
 # Currently completed languages
  * C#
-   * Console App (.NET 5.0, .NET Standard 2.0, .NET Framework 4.5, & .NET Framework 4.0)
+   * Console App (.NET 5.0, .NET Standard 2.0, .NET Framework 4.0, & .NET Framework 4.5)
  * JS
    * JS + HTML Webpage
 
@@ -18,8 +18,8 @@ PRs should include the steps to build and run your code and a screenshot of the
 output.
 
 Your code should take input from the user to determine the number of rows and
-colums and then output as:
-```Input the number of col
+columns and then output as:
+```
 Input the number of columns: 22
 Input the number of rows: 22
     |   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22
