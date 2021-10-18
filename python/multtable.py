@@ -1,8 +1,13 @@
 # Python.
 
 def main():
-	table = MultTable(int(input("Input the number of columns: ")), int(input("Input the number of rows: ")))
-	table.print_table()
+	try:
+		table = MultTable(int(input("Input the number of columns: ")), int(input("Input the number of rows: ")))
+		table.print_table()
+	except ValueError:
+		print("Invalid input. Using default 5x5 size for table.")
+		MultTable(5, 5).print_table()
+
 
 class MultTable:
 
