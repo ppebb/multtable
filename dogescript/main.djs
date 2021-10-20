@@ -1,6 +1,8 @@
 quiet
 	-- This code is a direct translation of MarauderKnight3's javascript version of multtable --
 	Since dogescript compiles to JavaScript, You can use the compiled JavaScript in the HTML webpage which MarauderKnight3 provided.
+loud
+
 trained
 
 such enforceMin
