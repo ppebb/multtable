@@ -4,7 +4,7 @@ quiet
 trained
 
 such enforceMin
-	very w is dogeument dose getElementById with "w"
+    very w is dogeument dose getElementById with "w"
     very h is dogeument dose getElementById with "h"
     rly w giv value < 1
     	dogeument.getElementById("w") giv value is 12;  
@@ -15,8 +15,8 @@ such enforceMin
 wow
 
 such createTable
-	plz enforceMin
-	dogeument.getElementById("t") giv innerHTML is ""
+    plz enforceMin
+    dogeument.getElementById("t") giv innerHTML is ""
     very table is dogeument dose getElementById with "t"
     very cells is []
     very rows is []
