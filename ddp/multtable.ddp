@@ -26,7 +26,7 @@ die Funktion pad(Zahl z) vom Typ Text macht:
 // add the first few spaces and the pipe
 für jede Zahl i von 0 bis maxLänge, mache:
 	schreibe(" ").
-schreibe("|").
+schreibe(" |").
 
 // write the numbers for all columns
 für jede Zahl i von 1 bis spalten, mache:
@@ -37,11 +37,11 @@ schreibe('\n'). // go to next line
 für jede Zahl i von 0 bis spalten, mache:
 	für jede Zahl j von 0 bis maxLänge, mache:
 		schreibe("-").
-schreibeZeile("-"). // add a missing '-' and go to next line
+schreibeZeile("---"). // add a missing '-'s and go to next line
 
 // write the mult table
 für jede Zahl j von 1 bis zeilen, mache:
-	schreibe(pad(j) plus "|"). // write the current row
+	schreibe(pad(j) plus " |"). // write the current row
 	für jede Zahl i von 1 bis spalten, mache:
 		schreibe(pad(i mal j)). // write the number
 	schreibe('\n').
