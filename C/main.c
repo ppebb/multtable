@@ -43,7 +43,7 @@ int main() {
 
     int max = rows * columns;
     int digitsPerNumber = digitCount(max);
-    int rowDigits = digitCount(rows);
+    int rowDigits = digitCount(rows + 1);
     if((digitsPerNumber + 1) * sizeof(char) > bufferSize) {
         bufferSize = (digitsPerNumber + 1) * sizeof(char); // digit count +1 for the null character
         char* temp = (char*)realloc(buffer, bufferSize);
