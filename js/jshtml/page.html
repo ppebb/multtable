@@ -2,19 +2,31 @@
 <html>
 
 <head>
-	<script src="joke.js"></script>
-	<title>This is a joke. MarauderKnight3</title>
+	<style>
+		td {
+			text-align: right;
+		}
+
+		body {
+			font-family: 'Courier New', Courier, monospace;
+		}
+
+		pre {
+			font-size: large;
+		}
+
+	</style>
+	<script src="multtable.js"></script>
+	<title>multtable. MarauderKnight3 and pollen00</title>
 </head>
 
 <body>
-	<label for="w">Rows wide:</label>
-	<input type="number" min="1" id="w" name="w" onchange="enforceMin()" value=1>
-	<label for="h">Columns high:</label>
-	<input type="number" min="1" id="h" name="h" onchange="enforceMin()" value=1>
-	<button onclick="createTable()">Submit</button>
-	<p id="e"></p>
-	<table id="t">
-	</table>
+	<label for="c">Input Columns:</label>
+	<input type="number" min="1" id="c" name="c" onchange="enforceMin()" value=1>
+	<label for="r">Input Rows:</label>
+	<input type="number" min="1" id="r" name="r" onchange="enforceMin()" value=1>
+	<button onclick="createMulttable()">Submit</button>
+	<pre id="textDiv"></pre>
 </body>
 
 </html>
