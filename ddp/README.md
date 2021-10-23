@@ -4,4 +4,4 @@
 3. If you have .Net installed you can use the exe in `exe > framework-dependent` otherwise use the exe in the folder for your operating system (`exe > win/mac/linux`).
 4. Open the .ddp file using DDP.exe. You can also use the command line with the path of the ddp file as the first argument like this: `DDP.exe %USERPROFILE%\Desktop\multtable.ddp`
 # Output
-![image](https://user-images.githubusercontent.com/26361108/137964904-1102f023-7e3a-422d-b93c-50ccbddd73d2.png)
+![image](https://user-images.githubusercontent.com/26361108/138567367-4047d190-23e9-40f4-8256-9c93e9723760.png)
