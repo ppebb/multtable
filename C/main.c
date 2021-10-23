@@ -43,6 +43,7 @@ int main() {
 
     int max = rows * columns;
     int digitsPerNumber = digitCount(max);
+    int rowDigits = digitCount(rows);
     if((digitsPerNumber + 1) * sizeof(char) > bufferSize) {
         bufferSize = (digitsPerNumber + 1) * sizeof(char); // digit count +1 for the null character
         char* temp = (char*)realloc(buffer, bufferSize);
@@ -55,10 +56,11 @@ int main() {
     
     // the columns line
     // " | n1  n2  n3 ..."
-    for(int i = 0; i < digitsPerNumber; i++) {
+    putchar(' '); // extra space before row number
+    for(int i = 0; i < rowDigits; i++) {  
         putchar(' ');
     }
-    putchar(' ');
+    putchar(' '); 
     putchar('|');
     for(int i = 1; i <= columns; i++) {
         putchar(' ');
@@ -67,9 +69,10 @@ int main() {
     putchar('\n');
 
     // --------------------------------------------
-    int d = digitsPerNumber 
-        + sizeof(char) * 2 // " |"
-        + (digitsPerNumber + 1) * columns;
+    int d = rowDigits 
+        + 1 + 2 // the space before the number and the " |"
+        + (digitsPerNumber + 1) * columns
+        + 1; // an extra "-"
     while(d-- > 0) {
         putchar('-');
     }
@@ -78,9 +81,12 @@ int main() {
     
     // y | x * y
     for(int j = 1; j <= rows; j++) {
-        printNumber(buffer, j, digitsPerNumber);
+        // " y |"
+        putchar(' '); // space before the row number
+        printNumber(buffer, j, rowDigits);
         putchar(' ');
         putchar('|');
+        // x * y
         for(int i = 1; i <= columns; i++) {
             putchar(' ');
             printNumber(buffer, i * j, digitsPerNumber);
