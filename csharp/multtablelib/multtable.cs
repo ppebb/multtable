@@ -1,7 +1,7 @@
 ﻿using System.Text;
 
 namespace multtable {
-	public static class Boilerplate {
+	public static class multtable {
 		public static string MultTable(int columns, int rows) {
 			int length = (columns * rows).ToString().Length + 1;
 			StringBuilder sb = new StringBuilder();
