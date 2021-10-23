@@ -1,20 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-#include <string.h>
 
-int digitCount(int number) {
-    return (int)( ceil(log10(number)) ) * sizeof(char); // the ammount of chars the number would take (not including the null char)
+int digitCount(int number) { // the chars the number would take (not including the null char)
+    int i = 1;
+    while(number >= 10){
+        number /= 10;
+        i++;
+    }
+    return i;
 }
 
-int printNumber(char* numberBuffer, int num, int maxChars) {
+void printNumber(char* numberBuffer, int num, int maxChars) {
     sprintf(numberBuffer, "%d", num); 
-    int whiteSpaceChars = maxChars - strlen(numberBuffer);
+    int whiteSpaceChars = maxChars - digitCount(num);
     while(whiteSpaceChars-- > 0) {
         putchar(' ');
     }
-    printf(numberBuffer);
-    return 0;
+    printf("%s", numberBuffer);
 }
 
 int main() {
@@ -24,14 +26,14 @@ int main() {
     int bufferSize = sizeof(char) * 32;
     char* buffer = (char*)malloc(bufferSize); // the cast is needed for a compiler
 
-    printf("Input number of columns: ");
+    printf("Input the number of columns: ");
     scanf("%s", buffer);
     if(sscanf(buffer, "%d", &columns) == 0) { 
         printf("Failed to parse number of columns, using default value: 5\n");
         columns = 5;
     }
 
-    printf("Input number of rows: ");
+    printf("Input the number of rows: ");
     scanf("%s", buffer);
     if(sscanf(buffer, "%d", &rows) == 0) {
         printf("Failed to parse number of rows, using default value: 5\n");
@@ -43,7 +45,8 @@ int main() {
 
     int max = rows * columns;
     int digitsPerNumber = digitCount(max);
-    int rowDigits = digitCount(rows + 1);
+    int rowDigits = digitCount(rows);
+    // check if the max number digits is bigger than the buffer
     if((digitsPerNumber + 1) * sizeof(char) > bufferSize) {
         bufferSize = (digitsPerNumber + 1) * sizeof(char); // digit count +1 for the null character
         char* temp = (char*)realloc(buffer, bufferSize);
@@ -52,6 +55,7 @@ int main() {
             printf("Failed to reallocate memory.");
             return -1;
         }
+        buffer = temp;
     }
     
     // the columns line
@@ -95,9 +99,6 @@ int main() {
     }
 
     free(buffer);
-
-    getchar();
-    getchar();
 
     return 0;
 }
