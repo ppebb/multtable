@@ -48,4 +48,6 @@ Input the number of rows: 22
  21 |  21  42  63  84 105 126 147 168 189 210 231 252 273 294 315 336 357 378 399 420 441 462
  22 |  22  44  66  88 110 132 154 176 198 220 242 264 286 308 330 352 374 396 418 440 462 484
  ```
- NOTE: It should not only output 22 rows/columns each time, it should actually respond to user input.
+ NOTES:
+   * It should not only output 22 rows/columns each time, it should actually respond to user input.
+   * There ARE spaces at the beginning of each line before the segment denoting the row number. Without that spaces the text can become smushed against the console wall. There should be the same number of spaces before each number as in the normal columns.
