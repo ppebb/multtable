@@ -1,5 +1,6 @@
 # Ignore vimspector debug configurations
  **/.vimspector.json
+ **/*.sln
 
 # Ignore c# directories
 bin/
