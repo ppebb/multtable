@@ -52,7 +52,7 @@ class MultTable:
 		return the_spaces
 
 	def print_table(self):
-		this_line = " " + self.get_required_spaces_for_outer_column(0, self.table_height - 1) + " |"
+		this_line = " " + self.get_required_spaces_for_outer_column(0, self.table_height - 1) + "  |"
 		for i in range(0, self.table_width - 1):
 			this_line += self.get_required_spaces_for_column(i) + str(i + 1)
 		print(this_line)
@@ -65,7 +65,7 @@ class MultTable:
 
 		this_line = ""
 		for i in range(0, self.table_height - 1):
-			this_line = self.get_required_spaces_for_outer_column(i + 1, self.table_height - 1) + str(i + 1) + " | "
+			this_line = " " + self.get_required_spaces_for_outer_column(i + 1, self.table_height - 1) + str(i + 1) + " | "
 			for j in range(0, self.table_width - 1):
 				this_line += self.get_required_spaces_for_index(j, i) + str(self.table[j][i]) + " "
 			print(this_line)
