@@ -59,7 +59,7 @@ class MultTable:
 
 		table_character_length = len(this_line)
 		this_line = ""
-		for i in range(0, table_character_length):
+		for i in range(0, table_character_length + 1):
 			this_line += "-"
 		print(this_line)
 

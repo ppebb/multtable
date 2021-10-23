@@ -13,7 +13,7 @@ Filling out the entirity of the [Wikipedia List of Programming Languages](https:
  * JS
    * JS + HTML Webpage
  * Python
-   * Version 3.9.7
+   * Console App (Python 3+)
 
 # Contributing
 PRs should include the steps to build and run your code and a screenshot of the
