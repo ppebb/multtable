@@ -13,6 +13,8 @@ Filling out the entirity of the [Wikipedia List of Programming Languages](https:
    * Console App (.NET 5.0, .NET Standard 2.0, .NET Framework 4.0, & .NET Framework 4.5)
  * JS
    * JS + HTML Webpage
+ * C
+   * Console App
  * Python
    * Console App (Python 3+)
 
