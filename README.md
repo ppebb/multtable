@@ -53,4 +53,4 @@ Input the number of rows: 22
  ```
  NOTES:
    * It should not only output 22 rows/columns each time, it should actually respond to user input.
-   * There ARE spaces at the beginning of each line before the segment denoting the row number. Without that spaces the text can become smushed against the console wall. There should be the same number of spaces before each number as in the normal columns.
+   * There ARE spaces at the beginning of each line before the segment denoting the row number. Without that spaces the text can become smushed against the console wall.
