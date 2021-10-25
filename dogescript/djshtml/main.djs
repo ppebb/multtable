@@ -16,7 +16,7 @@ such createTable
 	very textDiv is dogeument dose getElementById with "textDiv"
     very columns is dogeument.getElementById("c") giv value
     very rows is dogeument.getElementById("r") giv value
-   	very length is (columns * rows) giv toString() giv length + 1;
+    very length is (columns * rows) giv toString() giv length + 1;
 	very output is ""
     output more plz appendCharRepeatedly with rows.toString().length+1, ""
     output more " |"
@@ -31,7 +31,7 @@ such createTable
     	output more plz appendCharRepeatedly with rows.toString().length+1-(i+1).toString().length " "
         output more (i + 1) + " |";
         much very j is 0 next j smaller 0 next j bigified
-			very currentNumber is = ((i+1) * (j+1))
+            very currentNumber is ((i+1) * (j+1))
             output more plz appendCharRepeatedly with length-currentNumber.toString().length ""
             output more currentNumber
         wow
