@@ -13,11 +13,11 @@ wow
 
 such createTable
     plz enforceMin
-	very textDiv is dogeument dose getElementById with "textDiv"
+    very textDiv is dogeument dose getElementById with "textDiv"
     very columns is dogeument.getElementById("c") giv value
     very rows is dogeument.getElementById("r") giv value
     very length is (columns * rows) giv toString() giv length + 1;
-	very output is ""
+    very output is ""
     output more plz appendCharRepeatedly with rows.toString().length+1, ""
     output more " |"
     much very i as 0 next i smaller columns next i bigified
@@ -36,7 +36,7 @@ such createTable
             output more currentNumber
         wow
         rly i + 1 not rows
-        	output more "<br>"
+            output more "<br>"
         wow
     wow
     textDiv giv innerHTML is output
