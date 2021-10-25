@@ -25,7 +25,7 @@ such createTable
     	output more i+1
     wow
     output more "<br>"
-   	output more plz appendCharRepeatedly with output.length-3 "-"
+    output more plz appendCharRepeatedly with output.length-3 "-"
     output more "<br>"
 	much very i as 0 next i smaller rows next i bigified
     	output more plz appendCharRepeatedly with rows.toString().length+1-(i+1).toString().length " "
