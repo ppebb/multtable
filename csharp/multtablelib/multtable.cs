@@ -1,20 +1,15 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 
-namespace multtable
-{
-	public static class Boilerplate
-	{
-		public static string MultTable(int columns, int rows)
-		{
-            int length = (columns * rows).ToString().Length + 1;
+namespace multtable {
+	public static class multtable {
+		public static string MultTable(int columns, int rows) {
+			int length = (columns * rows).ToString().Length + 1;
 			StringBuilder sb = new StringBuilder();
 
 			sb.Append(' ', rows.ToString().Length + 1);
 			sb.Append(" |");
 
-			for (int i = 0; i < columns; i++)
-			{
+			for (int i = 0; i < columns; i++) {
 				sb.Append(' ', length - (i + 1).ToString().Length);
 				sb.Append(i + 1);
 			}
@@ -24,14 +19,12 @@ namespace multtable
 			sb.Append('-', sb.Length);
 			sb.AppendLine();
 
-			for (int i = 0; i < rows; i++)
-			{
+			for (int i = 0; i < rows; i++) {
 				sb.Append(' ', rows.ToString().Length + 1 - (i + 1).ToString().Length);
 				sb.Append(i + 1);
 				sb.Append(" |");
 
-				for (int j = 0; j < columns; j++)
-				{
+				for (int j = 0; j < columns; j++) {
 					int currentNumber = (i + 1) * (j + 1);
 
 					sb.Append(' ', length - currentNumber.ToString().Length);
@@ -42,7 +35,7 @@ namespace multtable
 					sb.AppendLine();
 			}
 
-            return sb.ToString();
-        }
+			return sb.ToString();
+		}
 	}
 }

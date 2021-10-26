@@ -9,9 +9,16 @@ Filling out the entirity of the [Wikipedia List of Programming Languages](https:
 
 # Currently completed languages
  * C#
+   * Library (For use in any other C# project)
    * Console App (.NET 5.0, .NET Standard 2.0, .NET Framework 4.0, & .NET Framework 4.5)
  * JS
-   * JS + HTML Webpage
+   * [JS + HTML Webpage](https://multtable.ppeb.me/)
+ * C
+   * Console App
+ * Python
+   * Console App (Python 3+)
+ * [DDP](https://github.com/NotLe0n/Die-Deutsche-Programmiersprache)
+   * Console App
 
 # Contributing
 PRs should include the steps to build and run your code and a screenshot of the output. Folder naming scheme should be `root/language/application`, so if your pr is a Rust console application then it would be `root/rust/console`.
@@ -46,4 +53,6 @@ Input the number of rows: 22
  21 |  21  42  63  84 105 126 147 168 189 210 231 252 273 294 315 336 357 378 399 420 441 462
  22 |  22  44  66  88 110 132 154 176 198 220 242 264 286 308 330 352 374 396 418 440 462 484
  ```
- NOTE: It should not only output 22 rows/columns each time, it should actually respond to user input.
+ NOTES:
+   * It should not only output 22 rows/columns each time, it should actually respond to user input.
+   * There ARE spaces at the beginning of each line before the segment denoting the row number. Without that spaces the text can become smushed against the console wall.

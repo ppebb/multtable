@@ -1,0 +1,51 @@
+/*
+	Multtable in DDP
+
+	for more information about the language and a download link for the interpreter visit:
+	https://github.com/NotLe0n/Die-Deutsche-Programmiersprache/ (use google translate)
+*/
+
+schreibe("Input the number of columns: ").
+die Zahl spalten ist zuZahl(leseZeile()). // read input for the amount of columns and convert to number
+schreibe("Input the number of rows: ").
+die Zahl zeilen ist zuZahl(leseZeile()). // read input for the amount of rows and convert to number
+
+die Zahl maxLänge ist Länge(zuText(zeilen mal spalten)). // how many digits the highest number has
+
+// a function to add padding to numbers
+die Funktion pad(Zahl z, Zahl grenzwert) vom Typ Text macht:
+	die Zahl länge ist Länge(zuText(z)). // how many digits the number "z" has
+
+	der Text t ist "".
+	für jede Zahl i von 0 bis grenzwert, mache:
+		t ist t plus " ". // add a space to "t"
+
+	t ist t plus z. // add the number to "t"
+	gib t zurück. // return "t"
+
+der Text zuerstZeile ist "".
+// add the first few spaces and the pipe
+für jede Zahl i von 0 bis Länge(zuText(zeilen)), mache:
+	zuerstZeile ist zuerstZeile plus " ".
+zuerstZeile ist zuerstZeile plus " |".
+
+// write the numbers for all columns
+für jede Zahl i von 1 bis spalten, mache:
+	zuerstZeile ist zuerstZeile plus pad(i, maxLänge minus Länge(zuText(i))).
+zuerstZeile ist zuerstZeile plus '\n'. // go to next line
+schreibe(zuerstZeile).
+
+// fill the row with the right amount of '-'
+für jede Zahl i von 1 bis Länge(zuerstZeile), mache:
+	schreibe("-").
+schreibe('\n').
+
+// write the mult table
+für jede Zahl j von 1 bis zeilen, mache:
+	schreibe(pad(j, (Länge(zuText(zeilen))) minus Länge(zuText(j)))). // write the current row
+	schreibe(" |").
+	für jede Zahl i von 1 bis spalten, mache:
+		schreibe(pad(i mal j, maxLänge minus Länge(zuText(i mal j)))).
+	schreibe('\n').
+
+//lese(). // so the program doesn't automatically close
