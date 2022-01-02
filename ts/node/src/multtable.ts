@@ -18,7 +18,7 @@ function createMulttable(columnSize: number, rowSize: number): string {
   }
 
   retVal += "\n";
-  retVal += appendMany(retVal.length - 3, "-");
+  retVal += appendMany(retVal.length, "-");
   retVal += "\n";
 
   for (var r: number = 0; r < rowSize; r++) {
