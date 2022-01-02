@@ -5,3 +5,10 @@
 # Ignore c# directories
 bin/
 obj/
+
+# Ignore node-related files/directories
+node_modules/
+package-lock.json
+
+# Ignore transpiled TypeScript (ts\node)
+dist/
