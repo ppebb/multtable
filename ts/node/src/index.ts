@@ -18,8 +18,8 @@ function prompt(promptText: string): Promise<string> {
   var columnSize: number = 10;
   var rowSize: number = 10;
 
-  columnSize = parseWithFallback(await prompt("Enter column count (10): "));
-  rowSize = parseWithFallback(await prompt("Enter row count (10): "));
+  columnSize = parseWithFallback(await prompt("Input the number of columns: "));
+  rowSize = parseWithFallback(await prompt("Input the number of rows: "));
 
   process.stdout.write(createMulttable(columnSize, rowSize));
 
