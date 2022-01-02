@@ -27,6 +27,10 @@ function prompt(promptText: string): Promise<string> {
 })();
 
 function parseWithFallback(input: string): number {
+  if (input === null || input.match(/^ *$/) !== null) {
+    input = "10";
+  }
+
   var retVal: number = parseInt(input);
 
   if (retVal === NaN) {
