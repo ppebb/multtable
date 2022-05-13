@@ -12,7 +12,7 @@ Filling out the entirity of the [Wikipedia List of Programming Languages](https:
    * Library (For use in any other C# project)
    * Console App (.NET 5.0, .NET Standard 2.0, .NET Framework 4.0, & .NET Framework 4.5)
  * JS
-   * [JS + HTML Webpage](https://multtable.ppeb.me/)
+   * [JS + HTML Webpage](https://ppeb.me/multtable/)
  * TS
    * Node.js program.
  * C
