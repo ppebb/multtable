@@ -20,7 +20,7 @@ impl Table {
 
     /// Spacing of each column
     fn max_space_columns(&self) -> usize {
-        get_num_len(self.columns * self.rows) + 2
+        get_num_len(self.columns * self.rows) + 1
     }
 
     /// Spacing of the factor column
@@ -66,8 +66,9 @@ impl Table {
         );
 
         // Print the products
-        for i in 1..(self.columns + 1) {
-            let product = i * row_number;
+        let mut product: usize = 0;
+        for _i in 0..(self.columns) {
+            product += row_number; // Speed optimization: add instead of multiply
             print!(
                 "{0}{1}",
                 " ".repeat(self.max_space_columns() - get_num_len(product)),
