@@ -21,6 +21,8 @@ Filling out the entirity of the [Wikipedia List of Programming Languages](https:
    * Console App (Python 3+)
  * [DDP](https://github.com/NotLe0n/Die-Deutsche-Programmiersprache)
    * Console App
+ * Rust
+   * Console App
 
 # Contributing
 PRs should include the steps to build and run your code and a screenshot of the output. Folder naming scheme should be `root/language/application`, so if your pr is a Rust console application then it would be `root/rust/console`.
